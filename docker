@@ -1,0 +1,9 @@
+FROM golang:latest
+WORKDIR /home/vladimir/Desktop/docker-file
+COPY go.mod .
+COPY go.sum .
+RUN go mod download 
+COPY . .
+CMD ["go", "run","main.go"]
+CMD ["echo", "First Docker image"]
+EXPOSE 8888
